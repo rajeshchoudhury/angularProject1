@@ -1,0 +1,1 @@
+json.partial! 'patient_details', patient: @patient

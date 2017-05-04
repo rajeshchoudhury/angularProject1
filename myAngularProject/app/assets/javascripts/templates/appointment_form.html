@@ -1,0 +1,94 @@
+<div class="modal-styled">
+<div class="modal-header">
+  <h3 class="modal-title">Schedule Appointment
+    <div ng-if="delete" class="modal-heading-button">
+      <button class="btn btn-danger" ng-click="delete()">Cancel Appointment</button>
+    </div>
+  </h3>
+</div>
+<div class="modal-body">
+  <aside class="flash row">
+    <article flash-alert duration="0" active-class="alert modal-alert" class="col-md-6 col-md-offset-3">
+      {{flash.message}}
+    </article>
+  </aside>
+
+  <div class="row">
+    <form role="form" class="edit-user form-horizontal" name="appointmentForm" novalidate>
+      <div class="col-sm-6">
+        <div class="form-group patient-group" ng-class="{'has-warning':(!patientForm.name.$valid && submitted)}">
+          <label class="col-md-2" for="patient_id">Patient</label>
+          <div class="col-md-10">
+            <select  id="patient_id" class="form-control" ng-model='appointment.patient_id' required >
+              <option ng-selected="(patient.id==appointment.patient_id)" ng-repeat="patient in patients" ng-value="patient.id">{{patient.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+              <label class="col-md-4" for="duration">Duration</label>
+              <div class="col-md-8">
+                <select id="duration" class="form-control" ng-model="appointment.duration">
+                  <option selected="true" value="0">30 Minutes</option>
+                  <option value="1">1 Hour</option>
+                  <option value="2">1:30 Hours</option>
+                  <option value="3">2 Hours</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+              <label class="col-md-3" for="visit_type">Type</label>
+              <div class="col-md-9">
+                <select id="visit_type" class="form-control" ng-model="appointment.visit_type">
+                  <option value="Evaluation">Evaluation</option>
+                  <option value="Consult">Consult</option>
+                  <option value="Return">Return</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+          <div class="col-md-2">
+            <label for="date">Date</label>
+          </div>
+          <div class="col-md-10">
+            <datepicker class="well well-sm datepicker-table" ng-model="appointment.date" show-weeks="true" class="well well-sm"></datepicker>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+          <div class="col-md-2">
+            <label class="time-label" for="time">Time</label>
+          </div>
+          <div class="col-md-10">
+            <timepicker class="time-table" name="time" ng-model="appointment.time"></timepicker>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <div class="col-md-12 notes-field">
+              <label for="obs" class="col-md-2">Notes</label>
+              <div class="col-md-10">
+                <textarea rows="11" name="obs" class="form-control" ng-model='appointment.obs' placeholder="Write some notes here"> </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-default fc-button-left" ng-click="dismiss()"> Cancel</button>
+  <button class="btn btn-success" ng-click="save()">Save Changes</button>
+</div>
+</div>

@@ -1,0 +1,172 @@
+<div class="modal-styled">
+<div class="modal-header">
+  <h3 class="modal-title" ng-if="patientId">Edit Profile</h3>
+  <h3 class="modal-title" ng-if="!patientId">New Client</h3>
+</div>
+<div class="modal-body">
+  <aside class="flash row">
+    <article flash-alert duration="0" active-class="alert modal-alert" class="col-md-6 col-md-offset-3">
+      {{flash.message}}
+    </article>
+  </aside>
+  <form role="form" class="edit-user form-horizontal" name="patientForm" novalidate>
+    <accordion class="accordion">
+      <accordion-group heading="Basic Information" is-open="true">
+        <div class="col-sm-2 profile-pic">
+          <div class="thumbnail">
+            <img src="/images/avatar.jpg" alt="Avatar">
+          </div>
+          <a class="btn btn-info"><i class="fa fa-pencil">&nbsp;&nbsp;Edit Pic</i></a>
+          <a class="btn btn-danger"><i class="fa fa-times">&nbsp;&nbsp;Remove</i></a>
+        </div>
+        <div class="col-sm-5">
+          <div class="form-group" ng-class="{'has-warning':(!patientForm.name.$valid && submitted)}">
+
+            <label class="col-md-2" for="name">Name</label>
+            <div class="col-md-10">
+              <input type="text" name="name" class="form-control" placeholder="Jonh Doe" ng-model="patient.name" required >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2" for="email">Email</label>
+            <div class="col-md-10">
+              <input type="text" name="email" class="form-control" ng-model='patient.email' placeholder="client@email.com">
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-2" for="phone">Phone</label>
+            <div class="col-md-10">
+              <input type="text" name="phone" class="form-control" ng-model='patient.phone' placeholder="(00)0000-0000">
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-2" for="phone">Mobile</label>
+            <div class="col-md-10">
+              <input type="text" name="phone" class="form-control" ng-model='patient.phone' placeholder="(00)0000-0000">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-2" for="birthplace">Country</label>
+            <div class="col-md-10">
+              <select id="birthplace" class="form-control" ng-model="patient.birthplace">
+                <option value="Brazilian">Brazilian</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Polish">Polish</option>
+                <option value="Greek">Greek</option>
+                <option value="German">German</option>
+                <option value="Jew">Jew</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-2" for="birth">Birth</label>
+            <div class="col-md-10">
+              <input type="text" name="birth" class="form-control" ng-model='patient.birth' placeholder="12-01-1988">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2">Sex</label>
+            <div class="col-md-10">
+              <label class="radio-inline">
+                <input type="radio" name="sex" value="Male" ng-model="patient.sex"> Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="sex" value="Female" ng-model="patient.sex"> Female
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2">Maried</label>
+            <div class="col-md-10">
+              <label class="radio-inline">
+                <input type="radio" name="civilstate" value="Maried" ng-model="patient.civilstate"> Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="civilstate" value="Single" ng-model="patient.civilstate"> No
+              </label>
+            </div>
+          </div>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Complementar Information">
+        <div class="col-sm-6">
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-2" for="skin">Skin</label>
+            <div class="col-md-10">
+              <select id="skin" class="form-control" ng-model="patient.skin">
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Vegan">Vegan</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-md-2">Special</label>
+            <div class="col-md-10">
+              <label class="radio-inline">
+                <input type="radio" name="special_patient" value="true" ng-model="patient.special_patient"> Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="special_patient" value="false" ng-model="patient.special_patient"> No
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-1" for="address">Address</label>
+            <div class="col-md-11">
+              <input type="text" name="address" class="form-control" ng-model='patient.address' placeholder="2501 N Green Valley Pkwy, Suite 150 
+Henderson, NV 89014 ">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-1" for="address">Address2</label>
+            <div class="col-md-11">
+              <input type="text" name="address" class="form-control" ng-model='patient.address' placeholder="2501 N Green Valley Pkwy, Suite 150 
+Henderson, NV 89014">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-1" for="address">Address3</label>
+            <div class="col-md-11">
+              <input type="text" name="address" class="form-control" ng-model='patient.address' placeholder="2501 N Green Valley Pkwy, Suite 150 
+Henderson, NV 89014">
+            </div>
+          </div>
+        </div>
+
+      </accordion-group>
+      <accordion-group heading="More Information">
+        <div class="col-sm-12">
+          <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+            <label class="col-md-1" for="obs">Notes</label>
+            <div class="col-md-11">
+              <textarea type="text" name="obs" class="form-control" ng-model='patient.obs' placeholder="Take any note you want here" rows="9"></textarea>
+            </div>
+          </div>
+        </div>
+      </accordion-group>
+    </accordion>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-default fc-button-left" ng-click="dismiss()"> Cancel</button>
+  <button class="btn btn-success" ng-click="save()">Save Changes</button>
+</div>
+</div>

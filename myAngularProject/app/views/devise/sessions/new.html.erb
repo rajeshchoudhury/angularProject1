@@ -1,0 +1,40 @@
+<div id="login-container">
+
+  <div id="logo">
+    <a href="./login.html">
+      <img src="/images/logo-login.png" alt="Logo" />
+    </a>
+  </div>
+
+  <div id="login">
+
+    <h3>Welcome to UberDentists</h3>
+
+    <h5>Please sign in to get access.</h5>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+      </div>
+
+
+      <div class="form-group">
+
+        <%= f.submit "Log In", class: "btn btn-primary btn-block login-btn" %>
+
+
+      </div>
+    <% end %>
+
+  </div> <!-- /#login -->
+
+
+</div> <!-- /#login-container -->
+

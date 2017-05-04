@@ -1,0 +1,1 @@
+json.(patient, :id, :name, :email, :birth, :phone, :birthplace, :civilstate, :skin, :special_patient, :sex, :obs, :address)

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TecoJS - Tests</title>
+    <link href="../node_modules/mocha/mocha.css" rel="stylesheet" media="screen" />
+    <script src="../node_modules/requirejs/require.js"></script>
+    <script src="../node_modules/sinon/lib/sinon.js"></script>
+    <script type="text/javascript">
+
+        var node_modules = [
+            "node_modules/expect.js/expect",
+            "node_modules/mocha/mocha",
+            "node_modules/sinon/lib/sinon/spy"
+        ];
+
+        var specs = [
+            "spec/apontador/parser/url.spec",
+            "spec/apontador/parser/querystring.spec",
+            "spec/apontador/tracker/gm.spec",
+            "spec/apontador/string/string.spec",
+            "spec/apontador/string/mask.spec",
+            "spec/apontador/string/trim.spec",
+            "spec/apontador/polyfill/placeholder.spec",
+            "spec/apontador/browser/detector.spec",
+            "spec/apontador/browser/event.spec",
+            "spec/apontador/retarget/localTracker.spec",
+            "spec/apontador/tracker/mediator.spec",
+            "spec/apontador/tracker/event/type/dispatcher.spec",
+            "spec/apontador/tracker/event/subscriber/localTracker.spec"
+        ];
+
+        var expect, assert;
+
+        require.config({
+            baseUrl: "../",
+            //timestamp to avoid cache
+            urlArgs: "v="+(new Date()).getTime(),
+            paths: {
+                'jquery': 'vendor/jquery-1.9.0.min',
+                'jquery.cookie': 'vendor/jquery.cookie'
+            },
+            shim: {
+                'jquery': {
+                    exports: 'jQuery',
+                    init: function () {
+                        return this.jQuery.noConflict();
+                    }
+                },
+                'jquery.cookie': {
+                    deps: ['jquery'],
+                    exports: 'jQuery.fn.cookie'
+                }
+            }
+        });
+
+        require( node_modules, function () {
+
+            mocha.setup('bdd');
+            mocha.globals(['jQuery', '$']);
+
+            require( specs, function (){
+                setTimeout(mocha.run,300);
+            });
+        });
+
+
+    </script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <input id="inputTest" placeholder="I am placeholder" type="text" class="default" style="display:none" />
+  </body>
+</html>

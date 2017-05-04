@@ -1,0 +1,69 @@
+/*
+Error: File to import not found or unreadable: bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets.
+       Load paths:
+         Compass::SpriteImporter
+         /home/raoni/Desktop/Shibata/shibata/app/assets/stylesheets
+         /home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets
+        on line 14 of /home/raoni/Desktop/Shibata/shibata/app/assets/stylesheets/application.css.scss
+
+9:  * compiled file so the styles you add here take precedence over styles defined in any styles
+10:  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+11:  * file per style scope.
+12:  *\/
+13: 
+14: @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+15: @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+16: @import "angular-loading-bar/build/loading-bar";
+17: @import "font-awesome";
+18: @import "layout";
+19: @import "animations";
+
+Backtrace:
+/home/raoni/Desktop/Shibata/shibata/app/assets/stylesheets/application.css.scss:14
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/tree/root_node.rb:20:in `render'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/engine.rb:268:in `render'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/home/raoni/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/bin/compass:44:in `call'
+/home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
+/home/raoni/.rvm/gems/ruby-2.2.1/bin/compass:23:in `load'
+/home/raoni/.rvm/gems/ruby-2.2.1/bin/compass:23:in `<main>'
+/home/raoni/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+/home/raoni/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets.\A        Load paths:\A          Compass::SpriteImporter\A          /home/raoni/Desktop/Shibata/shibata/app/assets/stylesheets\A          /home/raoni/.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets\A         on line 14 of /home/raoni/Desktop/Shibata/shibata/app/assets/stylesheets/application.css.scss\A \A 9:  * compiled file so the styles you add here take precedence over styles defined in any styles\A 10:  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new\A 11:  * file per style scope.\A 12:  */\A 13: \A 14: @import \"bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets\";\A 15: @import \"bootstrap-sass-official/assets/stylesheets/bootstrap\";\A 16: @import \"angular-loading-bar/build/loading-bar\";\A 17: @import \"font-awesome\";\A 18: @import \"layout\";\A 19: @import \"animations\";"; }
